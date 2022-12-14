@@ -7,6 +7,7 @@ const About = lazy(() => import("../views/About"))
 const User = lazy(() => import("../views/User"))
 const Page1 = lazy(() => import("../views/Page1"))
 const Page2 = lazy(() => import("../views/Page2"))
+const Page301 = lazy(() => import("../views/Page301"))
 // Navigate重定向组件
 // lazy函数会报错
 // 懒加载模式的组件的写法 外面需要套一层 Loading的提示加载组件
@@ -33,9 +34,20 @@ const routes = [
                 path: "/page2",
                 element: withLoadingComponent(<Page2 />)
             },
+            {
+                path: "/page3/page301",
+                element: withLoadingComponent(<Page301 />)
+            },
 
         ]
+    },
+    // 嵌套路由结束 结束。。。。。。。
+    // 访问其余路径的时候直接跳到首页
+    {
+        path: '*',
+        element: <Navigate to="/page1" />
     }
+
     // {
     //     path: "/home",
     //     element: <Home />
