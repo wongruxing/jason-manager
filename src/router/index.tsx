@@ -2,7 +2,7 @@ import React, { lazy } from "react"//拿到大对象模式
 import { Navigate } from "react-router-dom"
 import Home from "../views/Home"
 // import About from "../views/About"
-// import User from "../views/User"
+import Login from "../views/Login"
 const About = lazy(() => import("../views/About"))
 const User = lazy(() => import("../views/User"))
 const Page1 = lazy(() => import("../views/Page1"))
@@ -46,7 +46,11 @@ const routes = [
     {
         path: '*',
         element: <Navigate to="/page1" />
-    }
+    },
+    {
+        path: '/login',
+        element: <Login />
+    },
 
     // {
     //     path: "/home",
